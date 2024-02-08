@@ -6,7 +6,9 @@ Library: C:\Users\Dmytro\Life\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_bur
 --meta-data-generation=False
 --dump=Function
 --float-precision=Standard
+--assembly-defines=Assembly-CSharp-firstpass;
 --assembly-defines=Assembly-CSharp;
+--assembly-defines=DOTween;
 --assembly-defines=lootlocker.lootlockersdk.runtime;
 --assembly-defines=LootLockerExamples;
 --assembly-defines=Mono.Security;
