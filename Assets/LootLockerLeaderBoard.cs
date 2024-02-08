@@ -45,7 +45,7 @@ public class LootLockerLeaderBoard : MonoBehaviour
 
     public void UploadScore(int score)
     {
-      
+        if(score <= 0) { return; }
         /*
          * Since this is a player leaderboard, member_id is not needed, 
          * the logged in user is the one that will upload the score.

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TerrainTools;
 
 public class ClickManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ClickManager : MonoBehaviour
     public GameObject circle;
     public GameObject triangle;
     public GameObject hexagon;
+    public GameObject decalPrefab;
 
     public TMPro.TMP_Text goalText;
     private GameObject[] shapes;
@@ -24,10 +26,12 @@ public class ClickManager : MonoBehaviour
         Constants.Triangle,
         Constants.Hexagon,
     };
-    
+
+    private Camera cameraMain;
 
     void Start()
     {
+        cameraMain = Camera.main;
         shapes = new GameObject[] { square, rombus, circle, triangle, hexagon };
         SpawnNewShape();
     }
@@ -35,25 +39,50 @@ public class ClickManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameController.isGameOver)
+        if (gameController.isGameOver)
         {
             return;
         }
 
-      /*  if (Input.GetKeyDown(KeyCode.Space))
+
+        foreach (Touch touch in Input.touches)
         {
-            Yes();
+            if (touch.phase == TouchPhase.Began)
+            {
+                ProcessTouch(touch.position);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            No();
-        }*/
+
+    }
+
+    private void ProcessTouch(Vector2 position)
+    {
+        Vector2 worldPosition = cameraMain.ScreenToWorldPoint(position);
+
+        GameObject decal = Instantiate(decalPrefab);
+
+        // decal.GetComponent<SpriteRenderer>().sprite = decals[Random.Range(0, decals.Length)];
+        decal.transform.position = worldPosition;
+        // PlayRandomizedSound(stepSound);
+
+        // SpawnPopParticles(worldPosition);
+        //  prevTapPos = worldPosition;
+
+    }
+
+    private void PaintDecal(Vector2 position)
+    {
 
     }
 
     public void Yes()
     {
+        if (currentShape == null)
+        {
+            return;
+        }
+
         if (currentShape.name.StartsWith(goal))
         {
             gameController.CorrectScore();
@@ -67,6 +96,11 @@ public class ClickManager : MonoBehaviour
 
     public void No()
     {
+        if (currentShape == null)
+        {
+            return;
+        }
+
         if (!currentShape.name.StartsWith(goal))
         {
             gameController.CorrectScore();

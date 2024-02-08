@@ -671,8 +671,8 @@ Canvas:
   m_GameObject: {fileID: 129859000}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -682,8 +682,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1218118323
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &129859004
 RectTransform:
@@ -3675,8 +3675,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1379240153
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &692795623
 RectTransform:
@@ -13462,6 +13462,7 @@ MonoBehaviour:
   circle: {fileID: 8597824152250439211, guid: 65eaa4fa935b5cd4ea59c0e26ba527ac, type: 3}
   triangle: {fileID: 3596869185067841879, guid: ae895c90710de834ab2d3a58b50e5672, type: 3}
   hexagon: {fileID: 7245680705422852664, guid: e01b81932a278614491f1610f935a712, type: 3}
+  decalPrefab: {fileID: 629196595810962698, guid: 869bde37c8fab0c46973690e50327786, type: 3}
   goalText: {fileID: 1176206910}
 --- !u!4 &1841245052
 Transform:
