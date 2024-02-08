@@ -40,7 +40,7 @@ public class ClickManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+      /*  if (Input.GetKeyDown(KeyCode.Space))
         {
             Yes();
         }
@@ -48,7 +48,7 @@ public class ClickManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             No();
-        }
+        }*/
 
     }
 
